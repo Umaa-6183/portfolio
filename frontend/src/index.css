@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pastel-yellow: #F9EFC7;
+  --color-pastel-pink: #F9DCEE;
+  --color-pastel-purple: #E0CEF4;
+  --color-pastel-blue: #DCE4F9;
+  --color-pastel-cyan: #E3F4FB;
+  --font-sans: "Inter", sans-serif;
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body { 
+  background-color: #f8fafc; 
+  overflow-x: hidden;
+}
