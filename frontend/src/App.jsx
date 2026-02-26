@@ -124,7 +124,7 @@ const skills = {
   "Tools": ["Jupyter", "Linux", "OpenCV", "MLflow", "WandB"]
 };
 
-const blogs = [
+const horizontalBlogs = [
   "Multi-modal learning explained: Bridging Text, Vision, and Audio",
   "AWS for ML deployment: From Notebook to Production",
   "Decoding Emotion Recognition Architectures",
@@ -132,7 +132,170 @@ const blogs = [
   "Architecting LLM Agents for Scale"
 ];
 
-// Reusable Basic Fade Component
+// New Comprehensive Blogs Data
+const detailedBlogs = [
+  {
+    id: 1,
+    category: "Multi-Modal AI",
+    tag: "Research Insight",
+    title: "Understanding Multi-Modal Deep Learning",
+    date: "August 12, 2025",
+    author: "Umaa Maheshwary SV",
+    color: "#F9EFD7",
+    intro: "Modern AI is shifting from uni-modal constraints to human-like perception. This blog explores why integrating audio, visual, and textual data is critical for next-generation intelligence.",
+    concept: "Multi-modal learning is a subfield of ML aiming to build models capable of processing and linking information from multiple modalities simultaneously, much like the human brain processes sights and sounds.",
+    architecture: "The architecture generally involves unimodal encoders (e.g., CNNs for images, Transformers for text), a cross-attention fusion layer to map embeddings into a shared latent space, and a unified decoding head. ",
+    challenges: "The primary challenges include temporal misalignment between data streams, modality collapse (where the model ignores weaker signals), and severe computational overhead during training.",
+    applications: "Widely applicable in Healthcare diagnostics (combining MRI with patient records), Emotion AI, and Autonomous Navigation.",
+    future: "The future heavily relies on computational biology alignment, specifically integrating multi-omics data seamlessly with patient phenotypic characteristics.",
+    conclusion: "Multi-modal systems bridge the gap between abstract data and real-world complexity, acting as the foundation for true generalizable AI."
+  },
+  {
+    id: 2,
+    category: "Multi-Modal AI",
+    tag: "Technical Deep Dive",
+    title: "Designing a Cross-Cultural Emotion Recognition System",
+    date: "September 05, 2025",
+    author: "Umaa Maheshwary SV",
+    color: "#E3F4FB",
+    intro: "Emotion expression varies drastically across cultures. Building a model that generalizes globally requires nuanced, bias-aware architecture designs.",
+    concept: "Cross-cultural emotion recognition focuses on identifying universal markers of emotion while accounting for cultural specificities in facial micro-expressions and vocal intonations.",
+    architecture: "We utilize a dual-stream Transformer network. One stream captures universal spatial-temporal features, while the secondary stream applies a culture-specific attention masking mechanism. ",
+    challenges: "Data scarcity in non-Western populations and the subjective nature of annotating emotional ground truth across different geographic regions.",
+    applications: "Global customer service AI, inclusive mental health screening tools, and localized user experience testing.",
+    future: "Integrating real-time physiological biosignals (heart rate variability, galvanic skin response) to cross-verify visual and auditory emotion predictions.",
+    conclusion: "True emotional AI requires a departure from 'one-size-fits-all' datasets and a move towards culturally empathetic architectural design."
+  },
+  {
+    id: 3,
+    category: "Multi-Modal AI",
+    tag: "AI Systems",
+    title: "The Future of Context-Aware AI Systems",
+    date: "October 20, 2025",
+    author: "Umaa Maheshwary SV",
+    color: "#F8D9EC",
+    intro: "An AI without context is merely a sophisticated calculator. This piece discusses the shift towards persistent, context-aware intelligence.",
+    concept: "Context-aware AI refers to systems that understand the situational, historical, and environmental context of a user's prompt, dynamically altering their processing pathways.",
+    architecture: "This relies on high-dimensional vector databases coupled with an LLM orchestration layer that retrieves stateful context before passing inputs to the generative model. ",
+    challenges: "Managing context window limits efficiently, mitigating hallucination via stale data retrieval, and ensuring ultra-low latency.",
+    applications: "Advanced clinical decision support systems and hyper-personalized digital twin environments.",
+    future: "Aligning these systems with continuous biological monitoring streams to provide real-time, context-aware health interventions.",
+    conclusion: "Context is the final hurdle in making AI feel genuinely proactive rather than simply reactive."
+  },
+  {
+    id: 4,
+    category: "Multi-Agent & Architecture",
+    tag: "AI Systems",
+    title: "Designing a Multi-Agent AI Architecture",
+    date: "November 14, 2025",
+    author: "Umaa Maheshwary SV",
+    color: "#E6CEF4",
+    intro: "Breaking down monolithic LLMs into collaborative, specialized agents is revolutionizing how we handle complex programmatic tasks.",
+    concept: "Multi-Agent AI involves deploying several independent AI agents, each initialized with a specific persona, toolset, and objective, working collaboratively to solve a larger problem.",
+    architecture: "A typical setup includes a 'Supervisor' node that parses the initial query and distributes sub-tasks to 'Worker' nodes. The workers communicate via a shared memory buffer before returning the aggregated payload. ",
+    challenges: "Agent looping (where agents infinitely pass tasks back and forth without resolution) and the cost implications of multiple overlapping API calls.",
+    applications: "Automated software engineering, robust data pipeline generation, and complex financial modeling.",
+    future: "Simulating entire biological pathways by assigning individual agents to act as specific proteins or enzymes within a synthetic environment.",
+    conclusion: "Multi-agent systems provide the necessary abstraction and specialization required to tackle enterprise-grade problems."
+  },
+  {
+    id: 5,
+    category: "Multi-Agent & Architecture",
+    tag: "Technical Deep Dive",
+    title: "Building a Wellness AI Assistant with NLP & AWS",
+    date: "December 01, 2025",
+    author: "Umaa Maheshwary SV",
+    color: "#DCE4F9",
+    intro: "A practical breakdown of engineering a scalable wellness application that bridges NLP with secure cloud infrastructure.",
+    concept: "Wellness AI assistants require a delicate balance of empathetic natural language processing and highly secure, compliant backend data handling.",
+    architecture: "The backend is hosted on AWS utilizing API Gateway and Lambda functions, invoking a LangChain-orchestrated memory module to generate safe, conversational wellness routines. ",
+    challenges: "Ensuring HIPAA-compliant data routing, minimizing cold-start latency on AWS Lambda, and designing strict guardrails to prevent unverified medical advice.",
+    applications: "Digital therapeutics, personalized meditation curation, and proactive burn-out prevention tools.",
+    future: "Integrating direct readouts from wearable health devices into the NLP context window for precision wellness tracking.",
+    conclusion: "Combining serverless cloud scalability with sophisticated NLP is the blueprint for modern health-tech applications."
+  },
+  {
+    id: 6,
+    category: "Multi-Agent & Architecture",
+    tag: "Cloud & Deployment",
+    title: "From Model to Deployment: Scaling AI on AWS",
+    date: "January 10, 2026",
+    author: "Umaa Maheshwary SV",
+    color: "#F9EFD7",
+    intro: "Training a model is only 20% of the job. This blog details the architectural requirements for scaling AI inferences securely.",
+    concept: "Deployment scaling focuses on MLOps pipelines—taking a static model weight file and wrapping it in an elastic, highly available API endpoint.",
+    architecture: "Using AWS SageMaker for inference endpoint creation, paired with an Elastic Load Balancer and auto-scaling groups triggered by CloudWatch GPU utilization metrics. ",
+    challenges: "Optimizing container sizes (Dockerizing PyTorch environments often leads to bloated images) and managing cross-zone network latency.",
+    applications: "Any production-level AI startup, massive e-commerce recommendation engines, and high-frequency trading platforms.",
+    future: "Deploying lightweight foundational models at the edge (Edge AI) specifically for mobile biological diagnostic devices.",
+    conclusion: "Robust MLOps is the silent backbone that turns a promising academic model into a viable, scalable product."
+  },
+  {
+    id: 7,
+    category: "Explainability & Ethics",
+    tag: "Explainable AI",
+    title: "Why Explainable AI Matters in Recommendation Systems",
+    date: "February 04, 2026",
+    author: "Umaa Maheshwary SV",
+    color: "#E3F4FB",
+    intro: "When an AI makes a decision that alters a user's career or life path, 'black-box' logic is no longer acceptable.",
+    concept: "Explainable AI (XAI) refers to methods and techniques that allow human users to understand and trust the results and output created by machine learning algorithms.",
+    architecture: "Implementing post-hoc explanation methods like SHAP (SHapley Additive exPlanations) or LIME alongside the primary neural network to assign feature importance scores dynamically. ",
+    challenges: "The trade-off between model accuracy and interpretability, as highly complex deep neural networks inherently resist simple linear explanations.",
+    applications: "Career placement platforms, judicial sentencing algorithms, and clinical trial participant selections.",
+    future: "Developing 'inherently interpretable' neural architectures for computational biology, ensuring scientists can exactly trace why a model predicted a specific genetic mutation.",
+    conclusion: "Explainability is not just an ethical requirement; it is a fundamental engineering requirement for user trust."
+  },
+  {
+    id: 8,
+    category: "Explainability & Ethics",
+    tag: "AI Systems",
+    title: "Privacy-First AI Architecture Design",
+    date: "February 18, 2026",
+    author: "Umaa Maheshwary SV",
+    color: "#F8D9EC",
+    intro: "As AI ingests increasingly personal data, architectural paradigms must shift from centralized hoarding to decentralized privacy.",
+    concept: "Privacy-first architecture ensures that sensitive user data is never exposed or centralized in plaintext during the model training or inference phases.",
+    architecture: "Implementation revolves around Federated Learning frameworks, where edge devices train local models and only send encrypted gradient updates to a centralized aggregation server. ",
+    challenges: "Significant communication overhead between edge devices and servers, and susceptibility to sophisticated data-poisoning attacks.",
+    applications: "Mobile keyboard predictions, smart home voice assistants, and decentralized patient health record analysis.",
+    future: "Leveraging fully homomorphic encryption to allow AI models to perform complex biological sequence alignments directly on encrypted patient data.",
+    conclusion: "The next era of AI scalability will be dictated by those who can compute efficiently without ever seeing the raw data."
+  },
+  {
+    id: 9,
+    category: "Future Direction",
+    tag: "AI & Biology",
+    title: "Multi-Modal AI for Multi-Omics Integration",
+    date: "March 02, 2026",
+    author: "Umaa Maheshwary SV",
+    color: "#E6CEF4",
+    intro: "The most complex data structure known to humanity is human biology. AI is the only tool capable of deciphering it.",
+    concept: "Multi-omics integration involves combining genomic, proteomic, and transcriptomic data to gain a holistic understanding of a biological system or disease pathology.",
+    architecture: "Designing graph neural networks (GNNs) where nodes represent different biological entities (genes, proteins) and edges represent their multi-modal relationships, processed through deep representation learning. ",
+    challenges: "The extreme high-dimensionality of omics data (often millions of features per sample) leading to the curse of dimensionality, and severe noise in biological sequencing.",
+    applications: "Precision medicine, targeted drug discovery, and cancer biomarker identification.",
+    future: "Building foundational models of whole human cells, entirely shifting computational biology from observation to precise prediction.",
+    conclusion: "Merging AI engineering with multi-omics is not just a technological step; it is a paradigm shift in medical science."
+  },
+  {
+    id: 10,
+    category: "Future Direction",
+    tag: "AI & Biology",
+    title: "Deep Learning in Systems Biology",
+    date: "March 15, 2026",
+    author: "Umaa Maheshwary SV",
+    color: "#DCE4F9",
+    intro: "Moving beyond single-protein analysis, Deep Learning is now simulating entire biological ecosystems.",
+    concept: "Systems biology aims to understand biological entities not in isolation, but as part of a complex, interacting network. Deep learning acts as the computational engine to simulate these nonlinear interactions.",
+    architecture: "Utilizing deep recurrent neural networks (RNNs) combined with neural differential equations to model the continuous time-series dynamics of cellular regulatory networks. ",
+    challenges: "Biological systems are notoriously chaotic; small perturbations can lead to massive downstream effects, making long-term model predictions highly unstable.",
+    applications: "Synthetic biology design, metabolic pathway engineering, and pandemic epidemiological modeling.",
+    future: "Creating 'Cognitive Digital Twins' of patient organs, allowing doctors to simulate drug responses via AI before administering physical treatments.",
+    conclusion: "By applying deep learning to systems biology, we are learning to program the physical world with the same precision we program software."
+  }
+];
+// FIXED: `amount: 0.2` used instead of `margin: "-100px"` to prevent early/broken animations.
 const FadeIn = ({ children, delay = 0, direction = "up" }) => {
   const yOffset = direction === "up" ? 50 : direction === "down" ? -50 : 0;
   const xOffset = direction === "left" ? 50 : direction === "right" ? -50 : 0;
@@ -140,7 +303,7 @@ const FadeIn = ({ children, delay = 0, direction = "up" }) => {
     <Motion.div
       initial={{ opacity: 0, y: yOffset, x: xOffset }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, delay, ease: "easeOut" }}
     >
       {children}
@@ -470,7 +633,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 8. TECHNICAL SKILLS (Animation: Staggered Fade Up) */}
+        {/* 8. TECHNICAL SKILLS */}
         <section className="py-32 px-6 md:px-20" style={{ backgroundColor: '#ffffff' }}>
           <div className="max-w-6xl mx-auto">
             <FadeIn><h2 className="text-4xl font-bold mb-16 flex items-center gap-4"><Server className="text-slate-400" /> Technical Skills</h2></FadeIn>
@@ -491,8 +654,9 @@ export default function App() {
           </div>
         </section>
 
-        {/* 9. BLOGS (Animation: Horizontal Scroll Section) */}
-        <section id="blogs" ref={blogTargetRef} className="relative h-[400vh]" style={{ backgroundColor: '#E6CEF4' }}>
+        {/* 9. WRITINGS & INSIGHTS (Horizontal Scroll - Fixed Height & Gap) */}
+        {/* Adjusted Height to h-[250vh] instead of 400vh to fix the massive white gap */}
+        <section ref={blogTargetRef} className="relative h-[250vh]" style={{ backgroundColor: '#E6CEF4' }}>
           <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
             <div className="px-10 md:px-20 mb-10 w-full max-w-7xl mx-auto">
               <h2 className="text-5xl font-black text-slate-900 mb-4 tracking-tighter">Writings & Insights</h2>
@@ -500,17 +664,14 @@ export default function App() {
             </div>
 
             <Motion.div style={{ x: xBlogs }} className="flex gap-10 px-10 md:px-20 w-max pb-10">
-              {blogs.map((title, idx) => (
+              {horizontalBlogs.map((title, idx) => (
                 <div key={idx} className="w-[80vw] md:w-[450px] flex-shrink-0 h-[400px] bg-white rounded-[3rem] p-10 flex flex-col justify-between shadow-2xl border border-white hover:-translate-y-2 transition-transform duration-500 relative overflow-hidden group">
-                  {/* Decorative Background inside card */}
                   <div className={`absolute -right-20 -top-20 w-64 h-64 rounded-full opacity-50 blur-3xl transition-colors duration-500`} style={{ backgroundColor: idx % 2 === 0 ? '#F9EFD7' : '#E3F4FB' }}></div>
-
                   <div className="relative z-10">
                     <span className="text-sm font-bold bg-slate-100 px-4 py-2 rounded-full inline-block mb-8">Article 0{idx + 1}</span>
                     <h3 className="text-3xl font-bold text-slate-900 leading-tight group-hover:text-purple-900 transition-colors">{title}</h3>
                   </div>
-
-                  <a href="#" className="relative z-10 w-14 h-14 bg-slate-900 text-white rounded-full flex items-center justify-center group-hover:bg-[#DCE4F9] group-hover:text-black transition-colors">
+                  <a href="#blogs" className="relative z-10 w-14 h-14 bg-slate-900 text-white rounded-full flex items-center justify-center group-hover:bg-[#DCE4F9] group-hover:text-black transition-colors">
                     <ArrowUpRight size={24} />
                   </a>
                 </div>
@@ -519,7 +680,36 @@ export default function App() {
           </div>
         </section>
 
-        {/* 10. ACADEMIC CV DOWNLOAD */}
+        {/* 10. NEW COMPREHENSIVE BLOG SECTION */}
+        <section id="blogs" className="py-32 px-6 md:px-20" style={{ backgroundColor: '#ffffff' }}>
+          <div className="max-w-7xl mx-auto">
+            <FadeIn><h2 className="text-4xl font-bold mb-6 text-slate-900 flex items-center gap-4"><FileText className="text-[#E6CEF4]" /> Deep Dive Research & Architecture Blogs</h2></FadeIn>
+            <FadeIn delay={0.1}><p className="text-xl text-slate-600 mb-16 max-w-3xl">A comprehensive collection of my technical research, architectural designs, and computational biology alignment.</p></FadeIn>
+
+            {/* Rendering Blog Categories */}
+            {["Multi-Modal AI", "Multi-Agent & Architecture", "Explainability & Ethics", "Future Direction"].map((categoryName, catIndex) => (
+              <div key={categoryName} className="mb-20">
+                <FadeIn delay={0.2}><h3 className="text-2xl font-black text-slate-400 uppercase tracking-widest mb-8 border-b border-slate-100 pb-4">{categoryName}</h3></FadeIn>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {detailedBlogs.filter(b => b.category === categoryName).map((blog, idx) => (
+                    <FadeIn key={blog.id} delay={0.1 * idx}>
+                      <div
+                        onClick={() => setSelectedBlog(blog)}
+                        className="p-8 rounded-[2rem] bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer h-full flex flex-col"
+                      >
+                        <span className="text-xs font-bold px-3 py-1 rounded-full w-max mb-6" style={{ backgroundColor: blog.color, color: '#1e293b' }}>{blog.tag}</span>
+                        <h4 className="text-2xl font-bold text-slate-900 mb-4">{blog.title}</h4>
+                        <p className="text-sm font-semibold text-slate-500 mt-auto">{blog.date}</p>
+                      </div>
+                    </FadeIn>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 11. ACADEMIC CV DOWNLOAD */}
         <section id="cv" className="py-32 px-6 md:px-20 relative overflow-hidden" style={{ backgroundColor: '#F9EFD7' }}>
           <div className="max-w-3xl mx-auto text-center relative z-10">
             <FadeIn>
@@ -532,9 +722,8 @@ export default function App() {
           </div>
         </section>
 
-        {/* 11. CONTACT (Animation: Fade In Overlay) */}
+        {/* 12. CONTACT */}
         <section id="contact" className="py-32 px-6 md:px-20 relative rounded-t-[3rem] overflow-hidden" style={{ backgroundColor: '#18181b' }}>
-          {/* Floating Pastel SVGs for background styling */}
           <Motion.svg animate={{ rotate: 360 }} transition={{ duration: 100, repeat: Infinity, ease: "linear" }} className="absolute -top-40 -right-40 w-96 h-96 text-[#F8D9EC] opacity-10" viewBox="0 0 200 200" fill="currentColor"><circle cx="100" cy="100" r="100" /></Motion.svg>
           <Motion.svg animate={{ rotate: -360 }} transition={{ duration: 80, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 -left-20 w-80 h-80 text-[#DCE4F9] opacity-10" viewBox="0 0 200 200" fill="currentColor"><rect width="200" height="200" rx="40" transform="rotate(45 100 100)" /></Motion.svg>
 
@@ -566,6 +755,70 @@ export default function App() {
           </div>
         </section>
       </div>
+
+      {/* BLOG MODAL (Full Screen Overlay) */}
+      {selectedBlog && (
+        <div className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-md flex items-center justify-center p-4 md:p-10">
+          <Motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            className="bg-white rounded-[3rem] w-full max-w-5xl max-h-[90vh] overflow-y-auto relative shadow-2xl"
+          >
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-white/90 backdrop-blur-xl p-8 md:px-16 border-b border-slate-100 flex justify-between items-start z-20">
+              <div>
+                <span className="text-sm font-bold px-3 py-1 rounded-full mb-4 inline-block" style={{ backgroundColor: selectedBlog.color, color: '#1e293b' }}>{selectedBlog.tag}</span>
+                <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-2 leading-tight">{selectedBlog.title}</h2>
+                <p className="text-slate-500 font-medium">By {selectedBlog.author} • {selectedBlog.date}</p>
+              </div>
+              <button onClick={() => setSelectedBlog(null)} className="p-3 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors">
+                <X size={24} className="text-slate-700" />
+              </button>
+            </div>
+
+            {/* Modal Content - Structured Exactly as Requested */}
+            <div className="p-8 md:p-16 space-y-12 text-lg text-slate-700 leading-relaxed">
+
+              <section>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3"><span className="text-[#E6CEF4]">1️⃣</span> Introduction</h3>
+                <p className="bg-slate-50 p-6 rounded-2xl border-l-4 border-[#DCE4F9] italic">{selectedBlog.intro}</p>
+              </section>
+
+              <section>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3"><span className="text-[#E6CEF4]">2️⃣</span> Core Concept Explanation</h3>
+                <p>{selectedBlog.concept}</p>
+              </section>
+
+              <section>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3"><span className="text-[#E6CEF4]">3️⃣</span> Architecture / Technical Section</h3>
+                <p className="mb-6">{selectedBlog.architecture}</p>
+              </section>
+
+              <section>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3"><span className="text-[#E6CEF4]">4️⃣</span> Challenges & Limitations</h3>
+                <p>{selectedBlog.challenges}</p>
+              </section>
+
+              <section>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3"><span className="text-[#E6CEF4]">5️⃣</span> Applications</h3>
+                <p>{selectedBlog.applications}</p>
+              </section>
+
+              <section>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3"><span className="text-[#E6CEF4]">6️⃣</span> Future Directions</h3>
+                <p>{selectedBlog.future}</p>
+              </section>
+
+              <section className="pt-8 border-t border-slate-100">
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3"><span className="text-[#E6CEF4]">7️⃣</span> Conclusion</h3>
+                <p className="font-medium text-slate-800">{selectedBlog.conclusion}</p>
+              </section>
+
+            </div>
+          </Motion.div>
+        </div>
+      )}
+
     </div>
   );
 }
