@@ -14,47 +14,90 @@ const portfolioProjects = [
     tech: ["PyTorch", "HuggingFace", "CUDA"],
     impact: "Decreased inference time by 15%.",
     github: "https://github.com/yourusername/repo-link",
-    color: "#F9EFD7"
+    color: "#F9EFD7",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop"
   },
   {
     title: "Multi-Modal Emotion Recognition",
     summary: "Architected a unified model fusing audio, visual, and text data for high-accuracy human emotional state detection.",
-    tech: ["PyTorch", "Transformers", "OpenCV", "Librosa"],
+    tech: ["PyTorch", "Transformers", "OpenCV"],
     impact: "Achieved 94% accuracy on validation sets. Architecture published in IEEE.",
     github: "#",
-    color: "#DCE4F9" // Blue
+    color: "#DCE4F9",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop"
   },
   {
     title: "Multi-Agent AI Wellness App",
     summary: "Developed a personalized wellness ecosystem driven by interacting LLM agents to monitor and suggest health routines.",
-    tech: ["LangChain", "OpenAI API", "React Native", "FastAPI"],
+    tech: ["LangChain", "OpenAI API", "React Native"],
     impact: "Reduced user latency by 40% using optimized vector retrieval. Serves context-aware responses.",
     github: "#",
-    color: "#E6CEF4" // Purple
+    color: "#E6CEF4",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop"
   },
   {
     title: "Cognitive Digital Twin",
     summary: "Built a synthetic data simulation environment mapping real-world physical sensor data to a predictive AI model.",
-    tech: ["TensorFlow", "AWS IoT", "Python", "Kubernetes"],
+    tech: ["TensorFlow", "AWS IoT", "Python"],
     impact: "Improved predictive maintenance anomaly detection by 22% over baseline models.",
     github: "#",
-    color: "#F9EFD7" // Yellow
+    color: "#F9EFD7",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
   },
   {
     title: "AI Career Platform",
     summary: "Engineered a recommendation engine matching candidate resumes with dynamic job market vector embeddings.",
-    tech: ["HuggingFace", "Pinecone", "Next.js", "Docker"],
+    tech: ["HuggingFace", "Pinecone", "Next.js"],
     impact: "Scaled to process 10,000+ resumes concurrently with sub-second search times.",
     github: "#",
-    color: "#F8D9EC" // Pink
+    color: "#F8D9EC",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1200&auto=format&fit=crop"
   },
   {
     title: "Masked Face Detection",
     summary: "Designed a lightweight CNN deployed on edge devices to detect proper facial mask wearing in real-time.",
-    tech: ["YOLOv5", "C++", "Edge AI", "OpenVINO"],
+    tech: ["YOLOv5", "C++", "Edge AI"],
     impact: "Maintained 30 FPS inference speed with 98% precision on low-power hardware.",
     github: "#",
-    color: "#E3F4FB" // Light Blue
+    color: "#E3F4FB",
+    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200&auto=format&fit=crop"
+  },
+  // --- 4 NEW ADDED DUMMY PROJECTS ---
+  {
+    title: "Computational Genomic Sequencer",
+    summary: "Deep learning pipeline for rapid DNA sequence alignment and anomaly detection.",
+    tech: ["BioPython", "Keras", "AWS"],
+    impact: "Accelerated sequence matching by 300% against industry standard tools.",
+    github: "#",
+    color: "#E6CEF4",
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    title: "Protein Folding Predictor",
+    summary: "Graph neural network designed to predict 3D protein structures from amino acid sequences.",
+    tech: ["PyTorch Geometric", "JAX", "CUDA"],
+    impact: "Achieved near state-of-the-art angstrom accuracy on custom lab datasets.",
+    github: "#",
+    color: "#DCE4F9",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    title: "Clinical Trial Data Extractor",
+    summary: "NLP engine capable of parsing dense PDF medical journals to extract trial outcomes and dosages.",
+    tech: ["BERT", "Spacy", "PostgreSQL"],
+    impact: "Automated 90% of manual data entry for a medical research startup.",
+    github: "#",
+    color: "#F9EFD7",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    title: "Automated Micro-fluidics Control",
+    summary: "Computer vision integrated control system for real-time routing of micro-fluidic droplets.",
+    tech: ["OpenCV", "C++", "Raspberry Pi"],
+    impact: "Reduced routing errors to under 0.1% during long-duration experiments.",
+    github: "#",
+    color: "#F8D9EC",
+    image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1200&auto=format&fit=crop"
   }
 ];
 
@@ -90,6 +133,18 @@ const experience = [
       "Optimized model inference time by 35% utilizing ONNX runtime conversions and containerization."
     ],
     tech: ["AWS", "PySpark", "Transformers", "Docker"]
+  },
+  // --- ADDED 3RD EXPERIENCE ---
+  {
+    role: "Data Science Research Assistant",
+    company: "XYZ University Labs",
+    duration: "May 2022 - Dec 2022",
+    details: [
+      "Conducted extensive research on computer vision models for biological image segmentation.",
+      "Co-authored a paper on lightweight CNN architectures for edge computing environments.",
+      "Processed and cleaned over 10,000 microscopic image samples for training datasets."
+    ],
+    tech: ["PyTorch", "OpenCV", "MATLAB", "Bash"]
   }
 ];
 
@@ -108,11 +163,64 @@ const education = [
   }
 ];
 
-const awards = [
-  { title: "I won paper award", icon: <Trophy size={32} /> },
-  { title: "I received academic honor", icon: <GraduationCap size={32} /> },
-  { title: "I secured funding", icon: <Star size={32} /> },
-  { title: "I got research recognition", icon: <Medal size={32} /> }
+// --- UPDATED AWARDS DATA ---
+const awardsList = [
+  {
+    year: "2026",
+    recognition: "I won paper award",
+    project: "Multi-Modal Emotion AI",
+    platform: "IEEE CAI",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600&auto=format&fit=crop"
+  },
+  {
+    year: "2025",
+    recognition: "I received academic honor",
+    project: "M.Tech Thesis",
+    platform: "XYZ University",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop"
+  },
+  {
+    year: "2024",
+    recognition: "I secured funding",
+    project: "Cognitive Digital Twin",
+    platform: "Tech Ventures",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=600&auto=format&fit=crop"
+  },
+  {
+    year: "2023",
+    recognition: "I got research recognition",
+    project: "Protein Folding GNN",
+    platform: "Bioinformatics Journal",
+    image: "https://images.unsplash.com/photo-1532187863486-abf9db0c28a3?q=80&w=600&auto=format&fit=crop"
+  },
+  {
+    year: "2022",
+    recognition: "Best Innovation Award",
+    project: "AI Wellness Assistant",
+    platform: "Tech Innovation Summit",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop"
+  },
+  {
+    year: "2022",
+    recognition: "Top 10 AI Researchers",
+    project: "Career Recommendation System",
+    platform: "Data Science Weekly",
+    image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?q=80&w=600&auto=format&fit=crop"
+  },
+  {
+    year: "2021",
+    recognition: "Outstanding Developer",
+    project: "Masked Face Detection",
+    platform: "Global Tech Awards",
+    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=600&auto=format&fit=crop"
+  },
+  {
+    year: "2020",
+    recognition: "Hackathon Winner",
+    project: "MindfulPath App",
+    platform: "DevPost Health Hack",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop"
+  }
 ];
 
 const skills = {
@@ -341,7 +449,10 @@ const RevealText = ({ text }) => {
 export default function App() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [selectedBlog, setSelectedBlog] = useState(null); // Modal State
-
+  const [activeProjectIndex, setActiveProjectIndex] = useState(null);
+  const [hoveredAward, setHoveredAward] = useState(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [hoveredExpIndex, setHoveredExpIndex] = useState(null);
   // 1. PROGRESS BAR ANIMATION (Global)
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
@@ -350,11 +461,10 @@ export default function App() {
   const { scrollYProgress: heroScroll } = useScroll();
   const yHero = useTransform(heroScroll, [0, 1], ["0%", "40%"]);
 
-  // 3. HORIZONTAL SCROLL FOR WRITINGS
-  const blogTargetRef = useRef(null);
-  const { scrollYProgress: blogScrollProgress } = useScroll({ target: blogTargetRef });
-  // Adjusted mapping to fix the blank space at the end
-  const xBlogs = useTransform(blogScrollProgress, [0, 1], ["0%", "-55%"]);
+  // HORIZONTAL SCROLL FOR SKILLS BACKGROUND TEXT
+  const skillsRef = useRef(null);
+  const { scrollYProgress: skillsScroll } = useScroll({ target: skillsRef, offset: ["start end", "end start"] });
+  const xSkillsBg = useTransform(skillsScroll, [0, 1], ["10%", "-50%"]);
 
   const API_URL = "https://portfolio-v825.onrender.com/api";
 
@@ -456,7 +566,7 @@ export default function App() {
       <div className="bg-white rounded-t-[3rem] relative z-10 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
 
         {/* 2. ABOUT SECTION */}
-        <section id="about" className="py-24 px-6 md:px-20 relative overflow-hidden" style={{ backgroundColor: '#ffffff' }}>
+        <section id="about" className="py-24 px-6 md:px-20 relative overflow-hidden" style={{ backgroundColor: '#fbf8cc' }}>
           <svg className="absolute top-0 right-0 w-96 h-96 text-[#E3F4FB] opacity-30 -translate-y-1/2 translate-x-1/3" viewBox="0 0 200 200" fill="currentColor"><circle cx="100" cy="100" r="100" /></svg>
 
           <div className="max-w-4xl mx-auto relative z-10">
@@ -475,44 +585,150 @@ export default function App() {
           </div>
         </section>
 
-        {/* 3. FEATURED PROJECTS */}
-        <section id="projects" className="py-32 px-6 md:px-20 relative" style={{ backgroundColor: '#F9EFD7' }}>
-          <div className="max-w-6xl mx-auto">
-            <FadeIn><h2 className="text-4xl font-bold mb-16 text-slate-900">Featured Projects</h2></FadeIn>
-            <div className="space-y-12">
-              {portfolioProjects.map((project, index) => (
-                <Motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 100 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ margin: "0px", once: true }}
-                  transition={{ type: "spring", stiffness: 50 }}
-                  className="sticky flex flex-col p-8 md:p-12 rounded-[3rem] border border-white/50 shadow-xl"
-                  style={{ backgroundColor: '#ffffff', top: `${100 + (index * 20)}px` }}
-                >
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="p-4 rounded-3xl" style={{ backgroundColor: project.color }}><Code2 size={28} className="text-slate-800" /></div>
-                    <a href={project.github} className="p-3 bg-slate-50 rounded-full hover:bg-slate-200 transition-colors"><Github size={20} /></a>
-                  </div>
-                  <h3 className="text-3xl font-bold mb-4 text-slate-900">{project.title}</h3>
-                  <p className="text-slate-600 mb-8 text-lg flex-grow">{project.summary}</p>
-                  <div className="bg-slate-50 p-6 rounded-2xl mb-8 border border-slate-100">
-                    <p className="text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide">Impact</p>
-                    <p className="text-slate-700">{project.impact}</p>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.tech.map(t => (
-                      <span key={t} className="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-700 shadow-sm">{t}</span>
-                    ))}
-                  </div>
-                </Motion.div>
-              ))}
+        {/* 3. FEATURED PROJECTS (Agency Video Layout) */}
+        <section id="projects" className="py-32 px-6 md:px-20 relative overflow-hidden" style={{ backgroundColor: '#fde4cf' }}>
+          <div className="max-w-7xl mx-auto">
+            {/* Centered Video-Style Header */}
+            <FadeIn>
+              <div className="text-center mb-20">
+                <span className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-2 block">+ Our Work</span>
+                <h2 className="text-5xl md:text-7xl font-black text-slate-900 uppercase tracking-tighter">Latest Projects</h2>
+              </div>
+            </FadeIn>
+            {/* Grid Layout: First item full width, next items 2-columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
+              {portfolioProjects.slice(0, 5).map((project, index) => {
+                const isFirst = index === 0;
+                return (
+                  <Motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className={`group cursor-pointer flex flex-col ${isFirst ? 'md:col-span-2' : ''}`}
+                    onClick={() => setActiveProjectIndex(index)}
+                  >
+                    {/* Image Container with Zoom Hover Effect */}
+                    <div className={`overflow-hidden rounded-[2rem] mb-6 ${isFirst ? 'aspect-[21/9]' : 'aspect-video'} bg-slate-100 relative`}>
+                      <Motion.img
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                      {/* Pastel Color Hint Overlay */}
+                      <div className="absolute inset-0 mix-blend-overlay opacity-20" style={{ backgroundColor: project.color }}></div>
+                    </div>
+
+                    {/* Text Content matching video layout */}
+                    <div className="flex flex-col md:flex-row justify-between items-start gap-4 pb-4">
+                      <div className="max-w-xl">
+                        <h3 className="text-2xl md:text-3xl font-black text-slate-900 group-hover:text-slate-600 transition-colors">{project.title}</h3>
+                        <p className="text-slate-600 text-lg mt-2 leading-relaxed hidden md:block">{project.summary}</p>
+                      </div>
+
+                      {/* Tags grouped on the right side */}
+                      <div className="flex flex-wrap gap-2 md:justify-end">
+                        {project.tech.map(t => (
+                          <span key={t} className="px-3 py-1 bg-white border border-slate-200 rounded-full text-sm font-semibold text-slate-500">{t}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </Motion.div>
+                );
+              })}
             </div>
+            {/* View All Button */}
+            <FadeIn delay={0.4}>
+              <div className="mt-24 text-center">
+                <button
+                  onClick={() => setActiveProjectIndex(0)}
+                  className="px-10 py-5 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-slate-700 hover:-translate-y-1 transition-all shadow-lg"
+                >
+                  View All My Work
+                </button>
+              </div>
+            </FadeIn>
           </div>
         </section>
+        {/* PROJECT DETAILS MODAL ("New Page" Effect) */}
+        {activeProjectIndex !== null && (
+          <div className="fixed inset-0 z-[999] bg-white overflow-y-auto flex flex-col">
+            {/* Header & Close Button */}
+            <div className="sticky top-0 w-full px-6 py-6 flex justify-between items-center bg-white/90 backdrop-blur-md z-50 border-b border-slate-100">
+              <span className="text-sm font-bold tracking-widest uppercase text-slate-400">Project {activeProjectIndex + 1} of {portfolioProjects.length}</span>
+              <button
+                onClick={() => setActiveProjectIndex(null)}
+                className="p-3 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors flex items-center gap-2 text-sm font-bold"
+              >
+                Close <X size={18} />
+              </button>
+            </div>
+
+            {/* Main Content Area */}
+            <div className="max-w-6xl mx-auto w-full px-6 py-16 flex-grow flex flex-col items-center">
+              <span className="px-4 py-1.5 rounded-full font-bold text-sm mb-6 inline-block" style={{ backgroundColor: portfolioProjects[activeProjectIndex].color }}>
+                {portfolioProjects[activeProjectIndex].tech[0]} Focus
+              </span>
+
+              <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 text-center tracking-tight">
+                {portfolioProjects[activeProjectIndex].title}
+              </h1>
+
+              <div className="flex flex-wrap gap-3 justify-center mb-12">
+                {portfolioProjects[activeProjectIndex].tech.map(t => (
+                  <span key={t} className="px-4 py-2 bg-slate-50 border border-slate-200 rounded-full font-semibold text-slate-600">{t}</span>
+                ))}
+              </div>
+
+              <div className="w-full aspect-video rounded-[3rem] overflow-hidden bg-slate-100 mb-16 shadow-2xl">
+                <img src={portfolioProjects[activeProjectIndex].image} alt="Project Demo" className="w-full h-full object-cover" />
+              </div>
+
+              <div className="w-full max-w-3xl space-y-10 text-lg md:text-xl text-slate-700 leading-relaxed">
+                <div>
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Project Overview</h3>
+                  <p>{portfolioProjects[activeProjectIndex].summary}</p>
+                </div>
+
+                <div className="p-8 bg-slate-50 rounded-3xl border-l-4" style={{ borderColor: portfolioProjects[activeProjectIndex].color }}>
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Measurable Impact</h3>
+                  <p className="font-medium text-slate-900">{portfolioProjects[activeProjectIndex].impact}</p>
+                </div>
+
+                <a href={portfolioProjects[activeProjectIndex].github} className="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-700 transition-colors">
+                  <Github size={20} /> View Source Code
+                </a>
+              </div>
+            </div>
+
+            {/* Footer Navigation (Next / Previous Project) */}
+            <div className="w-full bg-slate-50 border-t border-slate-200 p-8 md:px-20 mt-auto">
+              <div className="max-w-6xl mx-auto flex justify-between items-center">
+                <button
+                  onClick={() => setActiveProjectIndex((prev) => (prev > 0 ? prev - 1 : portfolioProjects.length - 1))}
+                  className="flex flex-col items-start group"
+                >
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1 group-hover:text-slate-600 transition-colors">Previous</span>
+                  <span className="text-lg font-bold text-slate-900 flex items-center gap-2"><ArrowDown className="rotate-90" size={18} /> Back</span>
+                </button>
+
+                <button
+                  onClick={() => setActiveProjectIndex((prev) => (prev < portfolioProjects.length - 1 ? prev + 1 : 0))}
+                  className="flex flex-col items-end group"
+                >
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1 group-hover:text-slate-600 transition-colors">Up Next</span>
+                  <span className="text-lg font-bold text-slate-900 flex items-center gap-2">Next Project <ArrowUpRight className="rotate-45" size={18} /></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* 4. RESEARCH & PUBLICATION */}
-        <section id="research" className="py-32 px-6 md:px-20 relative overflow-hidden" style={{ backgroundColor: '#E3F4FB' }}>
+        <section id="research" className="py-32 px-6 md:px-20 relative overflow-hidden" style={{ backgroundColor: '#ffcfd2' }}>
           <svg className="absolute bottom-0 left-0 w-full h-64 text-white opacity-40" viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="currentColor" fillOpacity="1" d="M0,192L80,186.7C160,181,320,171,480,181.3C640,192,800,224,960,218.7C1120,213,1280,171,1360,149.3L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
 
           <div className="max-w-4xl mx-auto relative z-10">
@@ -540,51 +756,79 @@ export default function App() {
           </div>
         </section>
 
-        {/* 5. EXPERIENCE */}
-        <section id="experience" className="py-32 px-6 md:px-20 relative" style={{ backgroundColor: '#ffffff' }}>
-          <div className="max-w-4xl mx-auto">
-            <FadeIn><h2 className="text-4xl font-bold mb-16 flex items-center gap-4"><Briefcase className="text-slate-400" /> Experience</h2></FadeIn>
-            <div className="relative space-y-16">
-              <div className="absolute left-[15px] top-4 bottom-0 w-[2px] bg-slate-100">
-                <Motion.div
-                  initial={{ height: "0%" }}
-                  whileInView={{ height: "100%" }}
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
-                  className="w-full bg-gradient-to-b from-[#E6CEF4] to-[#DCE4F9]"
-                />
-              </div>
+        {/* 5. EXPERIENCE (Hover Accordion Layout) */}
+        <section id="experience" className="py-32 px-6 md:px-20 relative overflow-hidden">
+          <Motion.svg animate={{ rotate: 360 }} transition={{ duration: 100, repeat: Infinity, ease: "linear" }} className="absolute -top-40 -left-40 w-96 h-96 text-[#f1c0e8] opacity-40" viewBox="0 0 200 200" fill="currentColor"><circle cx="100" cy="100" r="100" /></Motion.svg>
+          <Motion.svg animate={{ rotate: -360 }} transition={{ duration: 80, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 -right-20 w-80 h-80 text-[#f1c0e8] opacity-70" viewBox="0 0 200 200" fill="currentColor"><rect width="200" height="200" rx="40" transform="rotate(45 100 100)" /></Motion.svg>
+          <div className="max-w-6xl mx-auto">
+            <FadeIn>
+              <h2 className="text-5xl md:text-7xl font-black text-slate-900 uppercase tracking-tighter mb-20 leading-none">
+                Experience
+              </h2>
+            </FadeIn>
 
-              {experience.map((exp, idx) => (
-                <div key={idx} className="relative pl-12">
-                  <Motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ type: "spring", delay: 0.2 }}
-                    className="absolute w-8 h-8 rounded-full -left-[15px] top-0 border-4 border-white bg-[#DCE4F9] shadow-md flex items-center justify-center"
-                  />
-                  <FadeIn delay={0.3} direction="right">
-                    <span className="text-sm font-bold px-3 py-1 bg-slate-100 text-slate-600 rounded-full uppercase tracking-wider mb-4 inline-block">{exp.duration}</span>
-                    <h3 className="text-3xl font-bold text-slate-900 mb-2">{exp.role}</h3>
-                    <p className="text-xl text-[#E6CEF4] font-bold mb-6 drop-shadow-sm">{exp.company}</p>
-                    <ul className="space-y-4 mb-8">
-                      {exp.details.map((detail, i) => (
-                        <li key={i} className="text-slate-600 text-lg flex items-start gap-3 bg-slate-50 p-4 rounded-xl">
-                          <span className="text-[#DCE4F9] mt-1 font-bold">▹</span> {detail}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.tech.map(t => <span key={t} className="text-xs font-bold px-3 py-1.5 bg-white border border-slate-200 rounded-full text-slate-600 shadow-sm">{t}</span>)}
+            <div className="flex flex-col w-full border-t border-slate-200">
+              {experience.map((exp, idx) => {
+                const isHovered = hoveredExpIndex === idx;
+
+                return (
+                  <div
+                    key={idx}
+                    onMouseEnter={() => setHoveredExpIndex(idx)}
+                    onMouseLeave={() => setHoveredExpIndex(null)}
+                    className="group border-b border-slate-200 py-12 cursor-pointer transition-colors"
+                  >
+                    {/* Always Visible Header */}
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                      <div>
+                        <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2 transition-colors group-hover:text-slate-500">
+                          {exp.role}
+                        </h3>
+                        <p className="text-xl text-slate-500 font-medium">
+                          {exp.company} <span className="text-slate-300 mx-3">|</span> {exp.duration}
+                        </p>
+                      </div>
                     </div>
-                  </FadeIn>
-                </div>
-              ))}
+
+                    {/* Smoothly Expanding Content */}
+                    <Motion.div
+                      initial={false}
+                      animate={{
+                        height: isHovered ? "auto" : 0,
+                        opacity: isHovered ? 1 : 0
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        ease: [0.04, 0.62, 0.23, 0.98] // Smooth, snappy agency-style easing
+                      }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-8 pb-2">
+                        <ul className="space-y-4 mb-8 max-w-4xl">
+                          {exp.details.map((detail, i) => (
+                            <li key={i} className="text-slate-600 text-lg leading-relaxed flex items-start gap-3">
+                              <span className="text-slate-300 mt-1">▹</span> {detail}
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="flex flex-wrap gap-3">
+                          {exp.tech.map(t => (
+                            <span key={t} className="px-4 py-2 bg-slate-50 border border-slate-200 rounded-full text-sm font-semibold text-slate-600 shadow-sm transition-colors group-hover:border-slate-300">
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </Motion.div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
 
         {/* 6. EDUCATION */}
-        <section className="py-32 px-6 md:px-20 overflow-hidden relative" style={{ backgroundColor: '#F8D9EC' }}>
+        <section className="py-32 px-6 md:px-20 overflow-hidden relative" style={{ backgroundColor: '#cfbaf0' }}>
           <svg className="absolute top-1/2 left-0 w-64 h-64 text-white opacity-40 -translate-y-1/2 -translate-x-1/2" viewBox="0 0 200 200" fill="currentColor"><rect width="200" height="200" rx="40" transform="rotate(45 100 100)" /></svg>
           <div className="max-w-4xl mx-auto relative z-10">
             <FadeIn><h2 className="text-4xl font-bold mb-16 flex items-center gap-4 text-slate-900"><GraduationCap className="text-slate-600" /> Education</h2></FadeIn>
@@ -608,109 +852,253 @@ export default function App() {
           </div>
         </section>
 
-        {/* 7. AWARDS, GRANTS & RECOGNITIONS */}
-        <section className="py-32 px-6 md:px-20 relative" style={{ backgroundColor: '#DCE4F9' }}>
-          <div className="max-w-5xl mx-auto">
-            <FadeIn><h2 className="text-4xl font-bold mb-16 text-center text-slate-900">Awards, Grants & Recognitions</h2></FadeIn>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {awards.map((award, idx) => (
-                <Motion.div
+        {/* 7. AWARDS, GRANTS & RECOGNITIONS (List Layout with Hover Image) */}
+        <section
+          className="py-32 px-6 md:px-20 relative overflow-hidden"
+          onMouseMove={(e) => setMousePosition({ x: e.clientX, y: e.clientY })}
+        >
+          <Motion.svg animate={{ rotate: 360 }} transition={{ duration: 100, repeat: Infinity, ease: "linear" }} className="absolute -top-40 -right-40 w-96 h-96 text-[#a3c4f3] opacity-60" viewBox="0 0 200 200" fill="currentColor"><rect width="200" height="200" rx="40" transform="rotate(45 100 100)" /></Motion.svg>
+          <svg className="absolute bottom-0 left-0 w-full h-64 text-[#a3c4f3] opacity-40" viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="currentColor" fillOpacity="1" d="M0,192L80,186.7C160,181,320,171,480,181.3C640,192,800,224,960,218.7C1120,213,1280,171,1360,149.3L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+          {/* <Motion.svg animate={{ rotate: 360 }} transition={{ duration: 100, repeat: Infinity, ease: "linear" }} className="absolute top-1/2 -right-0 w-96 h-96 text-[#a3c4f3] opacity-60" viewBox="0 0 200 200" fill="currentColor"><circle cx="100" cy="100" r="100" /></Motion.svg>
+          <Motion.svg animate={{ rotate: -360 }} transition={{ duration: 80, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 -left-20 w-80 h-80 text-[#a3c4f3] opacity-40" viewBox="0 0 200 200" fill="currentColor"><rect width="200" height="200" rx="40" transform="rotate(45 100 100)" /></Motion.svg> */}
+          <div className="max-w-7xl mx-auto relative">
+            <FadeIn>
+              <h2 className="text-6xl md:text-8xl font-black text-slate-900 uppercase tracking-tighter mb-20 leading-none">
+                Awards & <br /> Recognitions
+              </h2>
+            </FadeIn>
+
+            {/* FIXED: Added top-0, left-0, and z-[999] so the image actually stays on the screen */}
+            <Motion.img
+              src={hoveredAward !== null ? awardsList[hoveredAward].image : awardsList[0].image}
+              className="fixed top-0 left-0 w-72 h-80 object-cover rounded-2xl pointer-events-none z-[999] shadow-2xl"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{
+                opacity: hoveredAward !== null ? 1 : 0,
+                scale: hoveredAward !== null ? 1 : 0.8,
+                x: mousePosition.x - 144, // Offsets by half width (288/2) to center on cursor
+                y: mousePosition.y - 160  // Offsets by half height (320/2) to center on cursor
+              }}
+              transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.5 }}
+            />
+
+            <div className="flex flex-col w-full relative z-10">
+              {/* Table Header Row (Hidden on Mobile) */}
+              <div className="hidden md:grid grid-cols-4 gap-4 text-xs font-bold uppercase tracking-widest text-slate-400 mb-8 pb-4 border-b border-slate-200">
+                <div>Year</div>
+                <div>Recognition</div>
+                <div>Project</div>
+                <div>Platform</div>
+              </div>
+
+              {/* Table Body Rows */}
+              {awardsList.map((award, idx) => (
+                <div
                   key={idx}
-                  initial={{ scale: 0.5, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1, type: "spring" }}
-                  whileHover={{ y: -10, scale: 1.05 }}
-                  className="bg-white p-8 rounded-[2rem] flex flex-col items-center text-center shadow-lg border border-white"
+                  onMouseEnter={() => setHoveredAward(idx)}
+                  onMouseLeave={() => setHoveredAward(null)}
+                  className="group grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 py-8 border-b border-slate-200 cursor-pointer transition-colors hover:bg-slate-50 items-center"
                 >
-                  <div className="w-16 h-16 rounded-full bg-[#E3F4FB] flex items-center justify-center text-blue-900 mb-6">
-                    {award.icon}
+                  <div className="text-lg font-medium text-slate-500 group-hover:text-slate-900 transition-colors">
+                    {award.year}
                   </div>
-                  <h3 className="text-lg font-bold text-slate-800">{award.title}</h3>
-                </Motion.div>
+                  <div className="text-xl md:text-2xl font-black text-slate-900 group-hover:text-slate-600 transition-colors">
+                    {award.recognition}
+                  </div>
+                  <div className="text-base font-medium text-slate-500 group-hover:text-slate-900 transition-colors">
+                    {award.project}
+                  </div>
+                  <div className="text-base font-bold text-slate-500 group-hover:text-slate-900 transition-colors uppercase">
+                    {award.platform}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* 8. TECHNICAL SKILLS */}
-        <section className="py-32 px-6 md:px-20" style={{ backgroundColor: '#ffffff' }}>
-          <div className="max-w-6xl mx-auto">
-            <FadeIn><h2 className="text-4xl font-bold mb-16 flex items-center gap-4"><Server className="text-slate-400" /> Technical Skills</h2></FadeIn>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {Object.entries(skills).map(([category, skillList], idx) => (
-                <FadeIn key={category} delay={idx * 0.1}>
-                  <div className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 shadow-sm h-full hover:shadow-md transition-shadow">
-                    <h3 className="text-xl font-bold mb-6 text-slate-800 border-b border-slate-200 pb-4">{category}</h3>
-                    <div className="flex flex-wrap gap-3">
+        <section ref={skillsRef} className="py-32 px-6 md:px-20 relative overflow-hidden " style={{ backgroundColor: '#90dbf4' }}>
+
+          {/* MASSIVE BACKGROUND TEXT (Parallax Scroll) */}
+          <Motion.div
+            style={{ x: xSkillsBg }}
+            className="absolute bottom-10 left-0 text-[12rem] md:text-[22rem] font-black text-slate-200/50 whitespace-nowrap z-0 pointer-events-none select-none tracking-tighter leading-none"
+          >
+            TOOLS SKILLS
+          </Motion.div>
+
+          <div className="max-w-7xl mx-auto relative z-10">
+
+            {/* TOP ROW: Sticky Title + Lists */}
+            <div className="flex flex-col lg:flex-row gap-16 mb-24">
+
+              {/* Left Column: Sticky Title */}
+              <div className="lg:w-1/3">
+                <div className="sticky top-32">
+                  <FadeIn>
+                    <span className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4 flex items-center gap-2">
+                      <span className="text-slate-900 font-black">+</span> Our Work
+                    </span>
+                    <h2 className="text-6xl md:text-8xl font-black text-slate-900 uppercase leading-[0.9] tracking-tighter">
+                      Tools & <br /> Skills
+                    </h2>
+                  </FadeIn>
+                </div>
+              </div>
+
+              {/* Right Column: Skills Lists */}
+              <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+                {Object.entries(skills).map(([category, skillList], idx) => (
+                  <FadeIn key={category} delay={idx * 0.1}>
+                    <h3 className="text-2xl font-black text-slate-900 mb-6">{category}</h3>
+                    <ul className="space-y-3">
                       {skillList.map(skill => (
-                        <span key={skill} className="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-semibold text-slate-700 shadow-sm">{skill}</span>
+                        <li key={skill} className="text-lg font-medium text-slate-600 flex items-center gap-3">
+                          <div className="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+                          {skill}
+                        </li>
                       ))}
-                    </div>
-                  </div>
-                </FadeIn>
-              ))}
+                    </ul>
+                  </FadeIn>
+                ))}
+              </div>
             </div>
+
+            {/* BOTTOM ROW: Percentage Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+              {Object.keys(skills).map((category, idx) => {
+                // Mapping existing categories to matching icons and mock percentages to match the video's aesthetic perfectly
+                const cardIcons = [<Code2 size={40} />, <Brain size={40} />, <Server size={40} />, <Globe size={40} />, <Microscope size={40} />];
+                const mockPercentages = [98, 92, 95, 88, 90];
+
+                return (
+                  <FadeIn key={`card-${category}`} delay={idx * 0.1}>
+                    <div className="bg-white rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-xl border border-slate-100 h-full group hover:-translate-y-2 transition-transform duration-300">
+                      <div className="text-slate-900 mb-6 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
+                        {cardIcons[idx]}
+                      </div>
+                      <h4 className="text-lg font-black text-slate-900 mb-6 leading-tight">{category}</h4>
+                      <div className="bg-slate-100/80 px-6 py-2 rounded-xl text-slate-800 font-black text-xl w-full">
+                        {mockPercentages[idx]}%
+                      </div>
+                    </div>
+                  </FadeIn>
+                );
+              })}
+            </div>
+
           </div>
         </section>
 
-        {/* 9. WRITINGS & INSIGHTS (Horizontal Scroll - Fixed Height & Gap) */}
-        {/* Adjusted Height to h-[250vh] instead of 400vh to fix the massive white gap */}
-        <section ref={blogTargetRef} className="relative h-[250vh]" style={{ backgroundColor: '#E6CEF4' }}>
-          <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
-            <div className="px-10 md:px-20 mb-10 w-full max-w-7xl mx-auto">
-              <h2 className="text-5xl font-black text-slate-900 mb-4 tracking-tighter">Writings & Insights</h2>
-              <p className="text-xl text-slate-700 font-medium">Scroll to explore my latest articles <ArrowDown className="inline animate-bounce ml-2" /></p>
-            </div>
+        {/* 9. WRITINGS & INSIGHTS (Continuous Infinite Carousel) */}
+        <section className="py-32 overflow-hidden" style={{ backgroundColor: '#8eecf5' }}>
+          <div className="px-6 md:px-20 mb-12 w-full max-w-7xl mx-auto">
+            <h2 className="text-5xl font-black text-slate-900 mb-4 tracking-tighter">Writings & Insights</h2>
+            <p className="text-xl text-slate-700 font-medium">Explore my latest articles</p>
+          </div>
 
-            <Motion.div style={{ x: xBlogs }} className="flex gap-10 px-10 md:px-20 w-max pb-10">
-              {horizontalBlogs.map((title, idx) => (
-                <div key={idx} className="w-[80vw] md:w-[450px] flex-shrink-0 h-[400px] bg-white rounded-[3rem] p-10 flex flex-col justify-between shadow-2xl border border-white hover:-translate-y-2 transition-transform duration-500 relative overflow-hidden group">
-                  <div className={`absolute -right-20 -top-20 w-64 h-64 rounded-full opacity-50 blur-3xl transition-colors duration-500`} style={{ backgroundColor: idx % 2 === 0 ? '#F9EFD7' : '#E3F4FB' }}></div>
-                  <div className="relative z-10">
-                    <span className="text-sm font-bold bg-slate-100 px-4 py-2 rounded-full inline-block mb-8">Article 0{idx + 1}</span>
-                    <h3 className="text-3xl font-bold text-slate-900 leading-tight group-hover:text-purple-900 transition-colors">{title}</h3>
+          <div className="flex w-full overflow-hidden">
+            <Motion.div
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ ease: "linear", duration: 40, repeat: Infinity }}
+              className="flex gap-10 w-max px-5 pb-10"
+            >
+              {/* Duplicating the array to create a seamless infinite loop */}
+              {[...horizontalBlogs, ...horizontalBlogs].map((title, idx) => {
+                // We use modulo to keep the article numbers and colors correct for the duplicated items
+                const actualIndex = idx % horizontalBlogs.length;
+
+                return (
+                  <div key={idx} className="w-[80vw] md:w-[450px] flex-shrink-0 h-[400px] bg-white rounded-[3rem] p-10 flex flex-col justify-between shadow-2xl border border-white hover:-translate-y-2 transition-transform duration-500 relative overflow-hidden group">
+                    <div className={`absolute -right-20 -top-20 w-64 h-64 rounded-full opacity-50 blur-3xl transition-colors duration-500`} style={{ backgroundColor: actualIndex % 2 === 0 ? '#F9EFD7' : '#E3F4FB' }}></div>
+                    <div className="relative z-10">
+                      <span className="text-sm font-bold bg-slate-100 px-4 py-2 rounded-full inline-block mb-8">Article 0{actualIndex + 1}</span>
+                      <h3 className="text-3xl font-bold text-slate-900 leading-tight group-hover:text-purple-900 transition-colors">{title}</h3>
+                    </div>
+                    <a href="#blogs" className="relative z-10 w-14 h-14 bg-slate-900 text-white rounded-full flex items-center justify-center group-hover:bg-[#DCE4F9] group-hover:text-black transition-colors">
+                      <ArrowUpRight size={24} />
+                    </a>
                   </div>
-                  <a href="#blogs" className="relative z-10 w-14 h-14 bg-slate-900 text-white rounded-full flex items-center justify-center group-hover:bg-[#DCE4F9] group-hover:text-black transition-colors">
-                    <ArrowUpRight size={24} />
-                  </a>
-                </div>
-              ))}
+                );
+              })}
             </Motion.div>
           </div>
         </section>
 
-        {/* 10. NEW COMPREHENSIVE BLOG SECTION */}
-        <section id="blogs" className="py-32 px-6 md:px-20" style={{ backgroundColor: '#ffffff' }}>
+        {/* 10. NEW COMPREHENSIVE BLOG SECTION (Sticky Left, Scrolling Right) */}
+        <section id="blogs" className="py-32 px-6 md:px-20" style={{ backgroundColor: '#98f5e1' }}>
           <div className="max-w-7xl mx-auto">
-            <FadeIn><h2 className="text-4xl font-bold mb-6 text-slate-900 flex items-center gap-4"><FileText className="text-[#E6CEF4]" /> Deep Dive Research & Architecture Blogs</h2></FadeIn>
-            <FadeIn delay={0.1}><p className="text-xl text-slate-600 mb-16 max-w-3xl">A comprehensive collection of my technical research, architectural designs, and computational biology alignment.</p></FadeIn>
+
+            {/* Main Section Header */}
+            <FadeIn>
+              <h2 className="text-4xl md:text-6xl font-black mb-6 text-slate-900 flex items-center gap-4 tracking-tighter">
+                <FileText className="text-[#E6CEF4]" size={48} /> Deep Dive Research
+              </h2>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <p className="text-xl text-slate-600 mb-24 max-w-3xl leading-relaxed">
+                A comprehensive collection of my technical research, architectural designs, and computational biology alignment.
+              </p>
+            </FadeIn>
 
             {/* Rendering Blog Categories */}
             {["Multi-Modal AI", "Multi-Agent & Architecture", "Explainability & Ethics", "Future Direction"].map((categoryName) => (
-              <div key={categoryName} className="mb-20">
-                <FadeIn delay={0.2}><h3 className="text-2xl font-black text-slate-400 uppercase tracking-widest mb-8 border-b border-slate-100 pb-4">{categoryName}</h3></FadeIn>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+              /* Parent container must have items-start for sticky to work correctly */
+              <div key={categoryName} className="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-32 relative items-start">
+
+                {/* LEFT SIDE: Sticky Category Title */}
+                <div className="lg:w-1/3 relative lg:sticky top-32 z-10">
+                  <FadeIn delay={0.2}>
+                    <h3 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tighter mb-6">
+                      {categoryName}
+                    </h3>
+                    {/* Decorative accent line */}
+                    <div className="w-12 h-1.5 bg-slate-900 rounded-full mb-6"></div>
+                    <p className="text-lg text-slate-500 font-medium">
+                      Explore architecture insights and technical breakdowns related to {categoryName}.
+                    </p>
+                  </FadeIn>
+                </div>
+
+                {/* RIGHT SIDE: Scrolling Blog Cards */}
+                <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
                   {detailedBlogs.filter(b => b.category === categoryName).map((blog, idx) => (
                     <FadeIn key={blog.id} delay={0.1 * idx}>
                       <div
                         onClick={() => setSelectedBlog(blog)}
-                        className="p-8 rounded-[2rem] bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer h-full flex flex-col"
+                        className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full flex flex-col group"
                       >
-                        <span className="text-xs font-bold px-3 py-1 rounded-full w-max mb-6" style={{ backgroundColor: blog.color, color: '#1e293b' }}>{blog.tag}</span>
-                        <h4 className="text-2xl font-bold text-slate-900 mb-4">{blog.title}</h4>
-                        <p className="text-sm font-semibold text-slate-500 mt-auto">{blog.date}</p>
+                        <div className="mb-8 flex justify-between items-start">
+                          <span
+                            className="text-xs font-black px-4 py-2 rounded-full uppercase tracking-wider transition-transform group-hover:scale-105"
+                            style={{ backgroundColor: blog.color, color: '#1e293b' }}
+                          >
+                            {blog.tag}
+                          </span>
+                          <ArrowUpRight className="text-slate-300 group-hover:text-slate-900 transition-colors" size={24} />
+                        </div>
+
+                        <h4 className="text-2xl font-bold text-slate-900 mb-6 group-hover:text-slate-600 transition-colors leading-snug">
+                          {blog.title}
+                        </h4>
+
+                        <p className="text-sm font-semibold text-slate-400 mt-auto pt-6 border-t border-slate-200 uppercase tracking-widest">
+                          {blog.date}
+                        </p>
                       </div>
                     </FadeIn>
                   ))}
                 </div>
+
               </div>
             ))}
           </div>
         </section>
 
         {/* 11. ACADEMIC CV DOWNLOAD */}
-        <section id="cv" className="py-32 px-6 md:px-20 relative overflow-hidden" style={{ backgroundColor: '#F9EFD7' }}>
+        <section id="cv" className="py-32 px-6 md:px-20 relative overflow-hidden" style={{ backgroundColor: '#b9fbc0' }}>
           <div className="max-w-3xl mx-auto text-center relative z-10">
             <FadeIn>
               <h2 className="text-4xl font-bold mb-6 text-slate-900">Research & Academic Profile</h2>
@@ -735,10 +1123,10 @@ export default function App() {
               <div className="space-y-6 mb-12">
                 <a href="mailto:example@email.com" className="flex items-center gap-4 text-white/90 text-xl hover:text-[#E3F4FB] transition-colors"><Mail size={28} /> umaa.maheshwary@example.com</a>
                 <div className="flex gap-4 pt-6">
-                  <a href="#" className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-[#E6CEF4] hover:text-black transition-all"><Linkedin size={24} /></a>
-                  <a href="#" className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-[#DCE4F9] hover:text-black transition-all"><Github size={24} /></a>
-                  <a href="#" className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-[#F9EFD7] hover:text-black transition-all" title="Google Scholar"><GraduationCap size={24} /></a>
-                  <a href="#" className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-[#E3F4FB] hover:text-black transition-all" title="ResearchGate"><Globe size={24} /></a>
+                  <a href="#" className="w-14 h-14 hover:bg-E3F4FB/10 backdrop-blur-md rounded-full flex items-center justify-center bg-[#E6CEF4] text-black  transition-all"><Linkedin size={24} /></a>
+                  <a href="#" className="w-14 h-14 hover:bg-E6CEF4/10 backdrop-blur-md rounded-full flex items-center justify-center bg-[#DCE4F9] text-black transition-all"><Github size={24} /></a>
+                  <a href="#" className="w-14 h-14 hover:bg-DCE4F9/10 backdrop-blur-md rounded-full flex items-center justify-center bg-[#F9EFD7] text-black transition-all" title="Google Scholar"><GraduationCap size={24} /></a>
+                  <a href="#" className="w-14 h-14 hover:bg-F9EFD7/10 backdrop-blur-md rounded-full flex items-center justify-center bg-[#E3F4FB] text-black transition-all" title="ResearchGate"><Globe size={24} /></a>
                 </div>
               </div>
             </FadeIn>
