@@ -3,7 +3,7 @@ import { motion as Motion, useScroll, useTransform, useSpring } from 'framer-mot
 import {
   ArrowDown, Mail, Github, Linkedin, Microscope, Code2, Brain,
   ArrowUpRight, Download, BookOpen, Server, GraduationCap, Briefcase, FileText, Globe,
-  Trophy, Award, Medal, Star
+  Trophy, Award, Medal, Star, X
 } from 'lucide-react';
 
 // --- DATA ARRAYS ---
@@ -108,7 +108,6 @@ const education = [
   }
 ];
 
-// NEW DATA ARRAY
 const awards = [
   { title: "I won paper award", icon: <Trophy size={32} /> },
   { title: "I received academic honor", icon: <GraduationCap size={32} /> },
@@ -295,6 +294,7 @@ const detailedBlogs = [
     conclusion: "By applying deep learning to systems biology, we are learning to program the physical world with the same precision we program software."
   }
 ];
+
 // FIXED: `amount: 0.2` used instead of `margin: "-100px"` to prevent early/broken animations.
 const FadeIn = ({ children, delay = 0, direction = "up" }) => {
   const yOffset = direction === "up" ? 50 : direction === "down" ? -50 : 0;
@@ -311,14 +311,14 @@ const FadeIn = ({ children, delay = 0, direction = "up" }) => {
   );
 };
 
-// Text Reveal Component (Animation: Text Reveal & Highlight)
+// Text Reveal Component
 const RevealText = ({ text }) => {
   const words = text.split(" ");
   return (
     <Motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.5 }}
       variants={{ visible: { transition: { staggerChildren: 0.03 } } }}
       className="inline-block"
     >
@@ -340,6 +340,7 @@ const RevealText = ({ text }) => {
 
 export default function App() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [selectedBlog, setSelectedBlog] = useState(null); // Modal State
 
   // 1. PROGRESS BAR ANIMATION (Global)
   const { scrollYProgress } = useScroll();
@@ -349,10 +350,11 @@ export default function App() {
   const { scrollYProgress: heroScroll } = useScroll();
   const yHero = useTransform(heroScroll, [0, 1], ["0%", "40%"]);
 
-  // 3. HORIZONTAL SCROLL FOR BLOGS
+  // 3. HORIZONTAL SCROLL FOR WRITINGS
   const blogTargetRef = useRef(null);
   const { scrollYProgress: blogScrollProgress } = useScroll({ target: blogTargetRef });
-  const xBlogs = useTransform(blogScrollProgress, [0, 1], ["0%", "-75%"]);
+  // Adjusted mapping to fix the blank space at the end
+  const xBlogs = useTransform(blogScrollProgress, [0, 1], ["0%", "-55%"]);
 
   const API_URL = "https://portfolio-v825.onrender.com/api";
 
@@ -395,7 +397,7 @@ export default function App() {
         ))}
       </div>
 
-      {/* 1. HERO SECTION (Animation: Parallax BG) */}
+      {/* 1. HERO SECTION */}
       <section id="home" className="relative h-screen flex flex-col justify-center items-center p-4 md:p-6 pb-24 overflow-hidden">
         <nav className="absolute top-0 left-0 w-full px-8 md:px-12 py-8 flex justify-between items-center z-20 text-white">
           <div className="font-bold text-xl tracking-tighter">UMAA MAHESHWARY SV</div>
@@ -453,9 +455,8 @@ export default function App() {
       {/* MAIN CONTENT WRAPPER */}
       <div className="bg-white rounded-t-[3rem] relative z-10 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
 
-        {/* 2. ABOUT SECTION (Animation: Text Reveal) */}
+        {/* 2. ABOUT SECTION */}
         <section id="about" className="py-24 px-6 md:px-20 relative overflow-hidden" style={{ backgroundColor: '#ffffff' }}>
-          {/* Subtle SVG Background */}
           <svg className="absolute top-0 right-0 w-96 h-96 text-[#E3F4FB] opacity-30 -translate-y-1/2 translate-x-1/3" viewBox="0 0 200 200" fill="currentColor"><circle cx="100" cy="100" r="100" /></svg>
 
           <div className="max-w-4xl mx-auto relative z-10">
@@ -474,7 +475,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 3. FEATURED PROJECTS (Animation: Stacking Sticky Cards) */}
+        {/* 3. FEATURED PROJECTS */}
         <section id="projects" className="py-32 px-6 md:px-20 relative" style={{ backgroundColor: '#F9EFD7' }}>
           <div className="max-w-6xl mx-auto">
             <FadeIn><h2 className="text-4xl font-bold mb-16 text-slate-900">Featured Projects</h2></FadeIn>
@@ -484,7 +485,7 @@ export default function App() {
                   key={index}
                   initial={{ opacity: 0, y: 100 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ margin: "-100px" }}
+                  viewport={{ margin: "0px", once: true }}
                   transition={{ type: "spring", stiffness: 50 }}
                   className="sticky flex flex-col p-8 md:p-12 rounded-[3rem] border border-white/50 shadow-xl"
                   style={{ backgroundColor: '#ffffff', top: `${100 + (index * 20)}px` }}
@@ -510,9 +511,8 @@ export default function App() {
           </div>
         </section>
 
-        {/* 4. RESEARCH & PUBLICATION (Animation: 3D Rotation) */}
+        {/* 4. RESEARCH & PUBLICATION */}
         <section id="research" className="py-32 px-6 md:px-20 relative overflow-hidden" style={{ backgroundColor: '#E3F4FB' }}>
-          {/* SVG Deco */}
           <svg className="absolute bottom-0 left-0 w-full h-64 text-white opacity-40" viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="currentColor" fillOpacity="1" d="M0,192L80,186.7C160,181,320,171,480,181.3C640,192,800,224,960,218.7C1120,213,1280,171,1360,149.3L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
 
           <div className="max-w-4xl mx-auto relative z-10">
@@ -523,7 +523,7 @@ export default function App() {
                   key={idx}
                   initial={{ rotateX: 30, opacity: 0, y: 50 }}
                   whileInView={{ rotateX: 0, opacity: 1, y: 0 }}
-                  viewport={{ margin: "-50px" }}
+                  viewport={{ margin: "0px", amount: 0.3 }}
                   transition={{ duration: 0.8, type: "spring" }}
                   className="p-10 bg-white shadow-xl rounded-[2rem] border border-white"
                 >
@@ -540,13 +540,11 @@ export default function App() {
           </div>
         </section>
 
-        {/* 5. EXPERIENCE (Animation: Self-Drawing Paths) */}
+        {/* 5. EXPERIENCE */}
         <section id="experience" className="py-32 px-6 md:px-20 relative" style={{ backgroundColor: '#ffffff' }}>
           <div className="max-w-4xl mx-auto">
             <FadeIn><h2 className="text-4xl font-bold mb-16 flex items-center gap-4"><Briefcase className="text-slate-400" /> Experience</h2></FadeIn>
             <div className="relative space-y-16">
-
-              {/* Self Drawing Timeline Line */}
               <div className="absolute left-[15px] top-4 bottom-0 w-[2px] bg-slate-100">
                 <Motion.div
                   initial={{ height: "0%" }}
@@ -585,7 +583,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 6. EDUCATION (Animation: Fade/Slide Horizontal) */}
+        {/* 6. EDUCATION */}
         <section className="py-32 px-6 md:px-20 overflow-hidden relative" style={{ backgroundColor: '#F8D9EC' }}>
           <svg className="absolute top-1/2 left-0 w-64 h-64 text-white opacity-40 -translate-y-1/2 -translate-x-1/2" viewBox="0 0 200 200" fill="currentColor"><rect width="200" height="200" rx="40" transform="rotate(45 100 100)" /></svg>
           <div className="max-w-4xl mx-auto relative z-10">
@@ -596,6 +594,7 @@ export default function App() {
                   key={idx}
                   initial={{ x: idx % 2 === 0 ? -100 : 100, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
                   transition={{ type: "spring", stiffness: 60, damping: 20 }}
                   className="p-8 md:p-10 rounded-[2rem] bg-white/80 backdrop-blur-md shadow-lg border border-white"
                 >
@@ -609,7 +608,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 7. AWARDS, GRANTS & RECOGNITIONS (Animation: Scroll-Driven Zoom Out) */}
+        {/* 7. AWARDS, GRANTS & RECOGNITIONS */}
         <section className="py-32 px-6 md:px-20 relative" style={{ backgroundColor: '#DCE4F9' }}>
           <div className="max-w-5xl mx-auto">
             <FadeIn><h2 className="text-4xl font-bold mb-16 text-center text-slate-900">Awards, Grants & Recognitions</h2></FadeIn>
@@ -619,6 +618,7 @@ export default function App() {
                   key={idx}
                   initial={{ scale: 0.5, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.5 }}
                   transition={{ duration: 0.5, delay: idx * 0.1, type: "spring" }}
                   whileHover={{ y: -10, scale: 1.05 }}
                   className="bg-white p-8 rounded-[2rem] flex flex-col items-center text-center shadow-lg border border-white"
@@ -687,7 +687,7 @@ export default function App() {
             <FadeIn delay={0.1}><p className="text-xl text-slate-600 mb-16 max-w-3xl">A comprehensive collection of my technical research, architectural designs, and computational biology alignment.</p></FadeIn>
 
             {/* Rendering Blog Categories */}
-            {["Multi-Modal AI", "Multi-Agent & Architecture", "Explainability & Ethics", "Future Direction"].map((categoryName, catIndex) => (
+            {["Multi-Modal AI", "Multi-Agent & Architecture", "Explainability & Ethics", "Future Direction"].map((categoryName) => (
               <div key={categoryName} className="mb-20">
                 <FadeIn delay={0.2}><h3 className="text-2xl font-black text-slate-400 uppercase tracking-widest mb-8 border-b border-slate-100 pb-4">{categoryName}</h3></FadeIn>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
