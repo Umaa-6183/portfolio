@@ -749,7 +749,6 @@ export default function App() {
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-6 border-t border-slate-100">
                     <p className="text-sm font-medium text-slate-800"><span className="text-slate-400 font-bold uppercase">Contribution:</span> {paper.contribution}</p>
                     <a href={paper.doi} className="flex items-center gap-2 text-sm font-bold bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-700 transition-colors">DOI <ArrowUpRight size={16} /></a>
-                    <a href={paper.pdf} className="flex items-center gap-2 text-sm font-bold bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-700 transition-colors">View Paper <ArrowUpRight size={16} /></a>
                     <a
                       href={paper.pdf}
                       target="_blank"
