@@ -1111,9 +1111,9 @@ export default function App() {
             <FadeIn>
               <h2 className="text-4xl font-bold mb-6 text-slate-900">Research & Academic Profile</h2>
               <p className="text-slate-700 mb-10 text-xl">Comprehensive details of my research publications, academic history, and technical architecture experience.</p>
-              <button className="inline-flex items-center gap-4 bg-slate-900 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-700 hover:scale-105 transition-all shadow-xl">
+              <a href="/umaasvresume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 bg-slate-900 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-700 hover:scale-105 transition-all shadow-xl">
                 <Download size={24} /> Download Full Academic CV (PDF)
-              </button>
+              </a>
             </FadeIn>
           </div>
         </section>
