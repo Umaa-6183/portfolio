@@ -18,25 +18,25 @@ const portfolioProjects = [
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop"
   },
   {
-    title: "Multi-Modal Emotion Recognition",
+    title: "Multi-Modal Emotion Recognition system using Deep Supervised Learning",
     summary: "Architected a unified model fusing audio, visual, and text data for high-accuracy human emotional state detection.",
     tech: ["PyTorch", "Transformers", "OpenCV"],
     impact: "Achieved 94% accuracy on validation sets. Architecture published in IEEE.",
-    github: "#",
+    github: "https://github.com/Umaa-6183/emotion-recognition-app",
     color: "#DCE4F9",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop"
   },
   {
-    title: "Multi-Agent AI Wellness App",
+    title: "AI Wellness WebApp [(NLP + Yoga + Meditation) + AWS]",
     summary: "Developed a personalized wellness ecosystem driven by interacting LLM agents to monitor and suggest health routines.",
     tech: ["LangChain", "OpenAI API", "React Native"],
     impact: "Reduced user latency by 40% using optimized vector retrieval. Serves context-aware responses.",
-    github: "#",
+    github: "https://github.com/Umaa-6183/mindfulpath",
     color: "#E6CEF4",
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop"
   },
   {
-    title: "Cognitive Digital Twin",
+    title: "Cognitive Digital Twin Cloud Operating System",
     summary: "Built a synthetic data simulation environment mapping real-world physical sensor data to a predictive AI model.",
     tech: ["TensorFlow", "AWS IoT", "Python"],
     impact: "Improved predictive maintenance anomaly detection by 22% over baseline models.",
@@ -49,7 +49,7 @@ const portfolioProjects = [
     summary: "Engineered a recommendation engine matching candidate resumes with dynamic job market vector embeddings.",
     tech: ["HuggingFace", "Pinecone", "Next.js"],
     impact: "Scaled to process 10,000+ resumes concurrently with sub-second search times.",
-    github: "#",
+    github: "https://github.com/Umaa-6183/AI-Career-Platform",
     color: "#F8D9EC",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1200&auto=format&fit=crop"
   },
@@ -106,8 +106,9 @@ const researchPapers = [
     title: "Advanced Multi-Modal Fusion Techniques for Real-Time Emotion Recognition",
     abstract: "This paper proposes a novel cross-attention mechanism bridging audio spectrograms and facial landmark embeddings, solving temporal misalignment in emotion detection.",
     venue: "IEEE Conference on Artificial Intelligence (CAI)",
-    link: "#",
-    contribution: "Lead author; designed the core fusion architecture and conducted primary benchmarking."
+    doi: "https://www.doi.org/10.56726/IRJMETS82067",
+    contribution: "Lead author; designed the core fusion architecture and conducted primary benchmarking.",
+    pdf: "/irjmets70800039728.pdf"
   }
 ];
 
@@ -124,42 +125,41 @@ const experience = [
     tech: ["Python", "AWS", "TensorFlow"]
   },
   {
-    role: "ML Intern",
-    company: "JM Analytics",
-    duration: "Jan 2023 - Present",
-    details: [
-      "Built an automated data pipeline using PySpark and AWS Glue to process 500GB+ of daily unstructured data.",
-      "Trained and deployed a custom NLP NER model to extract financial entities from dense PDFs.",
-      "Optimized model inference time by 35% utilizing ONNX runtime conversions and containerization."
-    ],
-    tech: ["AWS", "PySpark", "Transformers", "Docker"]
-  },
-  // --- ADDED 3RD EXPERIENCE ---
-  {
-    role: "Data Science Research Assistant",
-    company: "XYZ University Labs",
-    duration: "May 2022 - Dec 2022",
+    role: "Quantum Machine Learning Research Intern",
+    company: "Ada Lovelace Software Private Limited (Startup)",
+    duration: "March 2026 - June 2026",
     details: [
       "Conducted extensive research on computer vision models for biological image segmentation.",
       "Co-authored a paper on lightweight CNN architectures for edge computing environments.",
       "Processed and cleaned over 10,000 microscopic image samples for training datasets."
     ],
     tech: ["PyTorch", "OpenCV", "MATLAB", "Bash"]
+  },
+  {
+    role: "Research and Development Analyst AI Intern",
+    company: "JM Analytics and Solutions Private Limited (JMA)",
+    duration: "Oct 2025 - Jan 2026",
+    details: [
+      "Built an automated data pipeline using PySpark and AWS Glue to process 500GB+ of daily unstructured data.",
+      "Trained and deployed a custom NLP NER model to extract financial entities from dense PDFs.",
+      "Optimized model inference time by 35% utilizing ONNX runtime conversions and containerization."
+    ],
+    tech: ["AWS", "PySpark", "Transformers", "Docker"]
   }
 ];
 
 const education = [
   {
     degree: "M.Tech in Computer Science and Engineering",
-    institution: "XYZ University",
-    year: "2024",
-    cgpa: "9.2/10"
+    institution: "Rajarajeswari College of Engineering, Bangalore",
+    year: "2024-2026",
+    cgpa: "9.25/10"
   },
   {
-    degree: "B.Tech in Computer Science",
-    institution: "ABC Institute of Technology",
-    year: "2022",
-    cgpa: "8.9/10"
+    degree: "B.E in Computer Science and Engineering",
+    institution: "City Engineering College, Bangalore",
+    year: "2017-2021",
+    cgpa: "7.1/10"
   }
 ];
 
@@ -748,7 +748,8 @@ export default function App() {
                   <p className="text-slate-600 mb-8 text-lg leading-relaxed italic border-l-4 border-[#DCE4F9] pl-6">"{paper.abstract}"</p>
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-6 border-t border-slate-100">
                     <p className="text-sm font-medium text-slate-800"><span className="text-slate-400 font-bold uppercase">Contribution:</span> {paper.contribution}</p>
-                    <a href={paper.link} className="flex items-center gap-2 text-sm font-bold bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-700 transition-colors">View Paper <ArrowUpRight size={16} /></a>
+                    <a href={paper.doi} className="flex items-center gap-2 text-sm font-bold bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-700 transition-colors">DOI <ArrowUpRight size={16} /></a>
+                    <a href={paper.pdf} className="flex items-center gap-2 text-sm font-bold bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-slate-700 transition-colors">View Paper <ArrowUpRight size={16} /></a>
                   </div>
                 </Motion.div>
               ))}
