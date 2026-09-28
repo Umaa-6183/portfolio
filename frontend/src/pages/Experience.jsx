@@ -80,13 +80,9 @@ export default function Experience() {
                     </div>
 
                     {/* Impact metrics */}
+                    {exp.metrics && exp.metrics.length > 0 && (
                     <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(130px,1fr))', gap:'1rem', marginTop:'1.5rem' }}>
-                      {[
-                        { val:'Multi-Agent', sub:'AI Platform', color:'purple' },
-                        { val:'AWS',         sub:'Cloud Deploy', color:'orange' },
-                        { val:'NLP',         sub:'Conversational AI', color:'cyan' },
-                        { val:'Supervised',  sub:'Learning Framework', color:'emerald' },
-                      ].map(m => (
+                      {exp.metrics.map(m => (
                         <div key={m.val} style={{
                           padding:'.9rem', borderRadius:'var(--r-md)', textAlign:'center',
                           background:`rgba(${m.color === 'purple' ? '124,58,237' : m.color === 'orange' ? '249,115,22' : m.color === 'cyan' ? '6,182,212' : '16,185,129'},.08)`,
@@ -97,6 +93,7 @@ export default function Experience() {
                         </div>
                       ))}
                     </div>
+                    )}
                   </div>
                 </div>
               );

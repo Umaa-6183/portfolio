@@ -96,7 +96,7 @@ export default function About() {
             <div style={{ display:'flex', flexDirection:'column', gap:'1rem' }}>
               {[
                 { icon:'📍', label:'Location', value:personal.location, color:'purple' },
-                { icon:'🎓', label:'Education', value:'M.Tech CSE · CGPA 9.25/10', color:'cyan' },
+                { icon:'🎓', label:'Education', value:'M.Tech CSE · CGPA 9.36/10', color:'cyan' },
                 { icon:'💼', label:'Experience', value:'R&D Analyst Intern · JM Analytics', color:'emerald' },
                 { icon:'📄', label:'Publications', value:'2 Peer-Reviewed Journal Articles', color:'amber' },
                 { icon:'📧', label:'Email', value:personal.email, color:'pink' },
